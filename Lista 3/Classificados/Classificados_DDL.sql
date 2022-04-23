@@ -1,0 +1,27 @@
+-- DDL: Data Definition Language
+-- CREATE 
+-- ALTER
+-- DROP
+CREATE DATABASE db_classificados
+
+USE db_classificados
+
+CREATE TABLE Usuarios(
+	Id INT PRIMARY KEY IDENTITY NOT NULL,
+	Nome VARCHAR(50) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+	Telefone VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Servico(
+	Id INT PRIMARY KEY IDENTITY NOT NULL,
+	Tipo VARCHAR(50) NOT NULL,
+	Descricao VARCHAR(200) NOT NULL,
+	Preco FLOAT NOT NULL,
+	Contato VARCHAR(50) NOT NULL,
+	FK_Usuario INT NOT NULL,
+	FOREIGN KEY (FK_Usuario) REFERENCES Usuarios (Id)
+)
+
+
+
